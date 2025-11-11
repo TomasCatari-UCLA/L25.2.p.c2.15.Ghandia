@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--probando un tipo de dato xd -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestión de Libreria</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h2>Manufactura</h2>
+
+  <!-- empleados (base para operadores y directivos) -->
+  <section id="libroForm" hidden>
+    <h3 style="width: 250px;">Libro de <span id="libroForm_lblTipo"></span></h3>
+    <label>Codigo:
+      <input type="text" id="libroForm_inCodigo" />
+    </label>
+    <label>Precio:
+      <input type="number" id="libroForm_inPrecio" />
+    </label>
+
+    <!-- Campo específico para operadores -->
+     <div id="libroForm_divInSaga" hidden>
+      <label>Saga? (Si/No):
+        <select id="libroForm_inSaga" >
+          <option value="Si">Si</option>
+          <option value="No">No</option>
+           </select>
+      </label>
+    </div>
+
+    <!-- Campo específico para directivos -->
+    <div id="libroForm_divInIlustrado" hidden>
+      <label>ilustrado? (Si/No):
+        <select id="libroForm_inIlustrado" >
+          <option value="Si">Si</option>
+          <option value="No">No</option>
+           </select>
+      </label>
+    </div>
+
+    <div>
+      <button id="libroForm_btnAceptarAdolescente" hidden>Aceptar Adolescente</button>
+      <button id="libroForm_btnAceptarNino" hidden>Aceptar Niño</button>
+      <button id="libroForm_btnCancelar">Cancelar</button>
+    </div>
+  </section>
+
+  <!-- Vista principal -->
+  <section id="mainForm">
+    <h3>Libros Procesados</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Codigo</th>
+          <th>Precio</th>
+          <th>Ilustrado </th>
+          <th>Saga</th>
+          <th>Precio a pagar</th>
+        </tr>
+      </thead>
+      <tbody id="mainForm_datLibros"></tbody>
+    </table>
+
+    <div class="divBotones">
+      <button id="mainForm_btnAgregarAdolescente">+ Adolescente</button>
+      <button id="mainForm_btnAgregarNino">+Niño</button>
+    </div>
+
+    <h3>Resumen de libreria</h3>
+    <div class="divSalida">
+      <label>Promedio Ilustrado: $.
+        <span id="mainForm_promedioIlustrado"></span>
+      </label>
+      <label>Porcentaje Mayor 100: %
+        <span id="mainForm_porcentajeMayor100"></span>
+      </label>
+    </div>
+  </section>
+
+  <script type="module">
+    import Cl_index from "./dist/Cl_index.js";
+    new Cl_index();
+  </script>
+</body>
+</html>
